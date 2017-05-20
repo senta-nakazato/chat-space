@@ -1,28 +1,53 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Datebase設計
 
-Things you may want to cover:
+## usersテーブル
+**association**
+-has_many :users_groups
+-has_mamy :groups, through: :groups_users
+-has_many :messages
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|colum|type|option|
+|:-:|:-:|:-:|
+|name|string|index,unique,NOTNULL|
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+## groupsテーブル
+**association**
+-has_many :users_groups
+-has many :users, through: :groups_users
+-has_many :messages
+
+
+|column|type|option|
+|:-:|:-:|:-:|
+|name|string|uniq,NOTNULL|
+
+
+## messagesテーブル
+**association**
+-belongs_to :group
+-belongs_to :user
+
+
+|column|type|option|
+|:-:|:-:|:-:|
+|text|text|
+|user_id|integer|foreign_key,NOTNULL|
+|group_id|integer|foreign_key,NOTNULL|
+
+
+
+## users_groups中間テーブル
+**association**
+-belongs_to :group
+-belobgs_to :user
+
+
+|column|type|option|
+|:-:|:-:|:-:|
+|user_id|integer|foreign_key,NOTNULL|
+|group_id|integer|foreign_key,NOTNULL|
+
