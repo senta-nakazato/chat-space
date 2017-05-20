@@ -23,59 +23,55 @@ Things you may want to cover:
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
 ## Datebase設計
 
 ## usersテーブル
 **association**
--has_many :remarks
 -has_many :users_groups
--has_mamy :groups, through: :users_groups
+-has_mamy :groups, through: :groups_users
+-has_many :remarks
 
-|column   |type    |
-|---------|--------|
-|name     |string  |
+|colum|type|option|
+|:-:|:-:|:-:|
+|name|string|index|
+
 
 
 
 ## groupsテーブル
 **association**
--has_many :remarks
 -has_many :users_groups
--has many :users, through: :users_groups
+-has many :users, through: :groups_users
+-has_many :remarks
 
 
-|column   |type    |
-|---------|--------|
-|name     |string  |
+|column|type|option|
+|:-:|:-:|:-:|
+|name|string|uniq|
 
 
-
-## remarksテーブル
+## messagesテーブル
 **association**
--belongs_to :user
 -belongs_to :group
+-belongs_to :user
 
 
-|column   |type    |
-|---------|--------|
-|name     |string  |
-|user_id  |integer |
-|group_id |integer |
+|column|type|option|
+|:-:|:-:|:-:|
+|message|string|
+|user_id|integer|foreign_key|
+|group_id|integer|foreign_key|
 
 
 
 ## users_groups中間テーブル
 **association**
--belongs_to :user
--belobgs_to :group
+-belongs_to :group
+-belobgs_to :user
 
 
-|column   |type    |
-|---------|--------|
-|user_id  |integer |
-|group_id |integer |
+|column|type|option|
+|:-:|:-:|:-:|
+|user_id|integer|foreign_key|
+|group_id|integer|foreign_key|
 
