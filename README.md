@@ -29,11 +29,11 @@ Things you may want to cover:
 **association**
 -has_many :users_groups
 -has_mamy :groups, through: :groups_users
--has_many :remarks
+-has_many :messages
 
 |colum|type|option|
 |:-:|:-:|:-:|
-|name|string|index|
+|name|string|index,unique,NOTNULL|
 
 
 
@@ -42,12 +42,12 @@ Things you may want to cover:
 **association**
 -has_many :users_groups
 -has many :users, through: :groups_users
--has_many :remarks
+-has_many :messages
 
 
 |column|type|option|
 |:-:|:-:|:-:|
-|name|string|uniq|
+|name|string|NOTNULL|
 
 
 ## messagesテーブル
@@ -58,7 +58,7 @@ Things you may want to cover:
 
 |column|type|option|
 |:-:|:-:|:-:|
-|message|string|
+|text|text|
 |user_id|integer|foreign_key|
 |group_id|integer|foreign_key|
 
