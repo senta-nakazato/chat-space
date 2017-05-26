@@ -1,39 +1,30 @@
-%html
-  %body
 
-    #chat-space
+#chat-space
+  .chat-side
+    .chat-side__user
+      .chat-side__user_content
+        .chat-side__user_content__name senta
+        %a.chat-side__user_content__group_edit
+          %i.fa.fa-pencil-square-o
+        %a.chat-side__user_content__user_edit
+          %i.fa.fa-cog
+    .chat-side__group
+      = render partial: "sidebar"
 
-      .chat-side
-        .chat-side__user
-          .chat-side__user_content
-            .chat-side__user__name senta
-            %a.chat-side__user__group_edit
-              %i.fa.fa-pencil-square-o
-            %a.chat-side__user__user_edit
-              %i.fa.fa-cog
-        .chat-side__group
-          .chat-side__group_content
-            .chat-side__group__name group
-            .chat-side__group__new-message message
+  .chat-mainpage
+    .mainpage__top
+      .mainpage__top__group_content
+        .mainpage__top__group_content__name group
+        %a.mainpage__top__group_content__edit_button edit
+        .mainpage__top__group_content__member MEMBER :
+    .mainpage__body
+      = render partial: "mainpage"
 
-      .chat-mainpage
-        .mainpage__top
-          .mainpage__group_content
-            .mainpage__group__name group
-            %a.mainpage__group__edit_button edit
-            .mainpage__group__member MEMBER :
-
-        .mainpage__body
-          .mainpage__body_content
-            .mainpage__body_user_name senta
-            .mainpage__body_date 2017/06/25 11:00
-            .mainpage__body_message where are you ?
-
-        .mainpage__bottom
-          %form.mainpage__bottom_form
-            .mainpage__bottom_content
-              %input.message{:placeholder => "type a message", :type => "text"}/
-              %label.image_file
-                %input.image{:type => "file"}/
-                %i.fa.fa-image
-            %input.submit{:type => "submit", :value => "Send"}/
+    .mainpage__bottom
+      %form.mainpage__bottom_form
+        .mainpage__bottom_form_content
+          %input.message{placeholder: "type a message", type: "text"}
+          %label.image_file
+            %input.image{type: "file"}
+            %i.fa.fa-image
+        %input.submit{type: "submit", value: "Send"}
