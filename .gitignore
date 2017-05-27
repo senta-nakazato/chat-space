@@ -11,3 +11,16 @@
 /log/*
 !/log/.keep
 /tmp
+
+helpers/
+mailers/
+models/
+bin/
+db/
+lib/
+log/
+public/
+test/
+tmp/
+vender/
+

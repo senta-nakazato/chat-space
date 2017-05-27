@@ -16,7 +16,7 @@
       top: 0;
       bottom: 0;
       &__name {
-        color: #f4f2e9;
+        color: $mainpage_color;
         font-weight: bold;
         font-size: 30px;
         letter-spacing: 3px;
@@ -31,32 +31,33 @@
         display: inline-block;
         margin-left: 50px;
         i.fa.fa-pencil-square-o {
-          color: #f4f2e9;
+          color: $mainpage_color;
         }
       }
       a.chat-side__user_content__user_edit{
         position: relative;
-        color: #f4f2e9;
+        color: $mainpage_color;
         display: inline-block;
         i.fa.fa-cog {
-          color: #f4f2e9;
+          color: $mainpage_color;
         }
       }
     }
   }
   &__group {
-    background-color: #e8b386;
+    background-color: $side_bottom_color;
     height: 85%;
     &_content {
       padding: 20px;
       &__name {
-        color: #d36216;
+        color: $side_top_color;
         font-weight: 700;
         font-size: 20px;
       }
       &__new-message {
-        color: #f4f2e9;
+        color: $mainpage_color;
       }
     }
   }
 }
+

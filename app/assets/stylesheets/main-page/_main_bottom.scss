@@ -2,7 +2,7 @@
   height: 90px;
   width: 100%;
   min-width: 400px;
-  background-color: #d36216;
+  background-color: $side_top_color;
   form.mainpage__bottom_form {
     margin: 0 40px;
     position: relative;
@@ -30,7 +30,7 @@
           display: none;
         }
         i.fa-image {
-          color: #e8b386;
+          color: $side_bottom_color;
         }
       }
     }
@@ -50,3 +50,4 @@
     }
   }
 }
+

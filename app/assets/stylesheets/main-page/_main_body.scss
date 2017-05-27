@@ -7,16 +7,17 @@
     &__user_name {
       font-size: 20px;
       font-weight: 900;
-      color: #d36216;
+      color:  $side_top_color;
       display: inline-block;
     }
     &__date {
-      color: #e8b386;
+      color: $side_bottom_color;
       display: inline-block;
       margin-left: 20px;
     }
     &__message {
-
+      font-weight: 200;
     }
   }
 }
+

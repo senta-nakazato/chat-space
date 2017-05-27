@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 gem 'mysql2', '>= 0.3.13', '< 0.5'
@@ -21,7 +20,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'font-awesome-rails'
 
-
 gem 'haml-rails'
 
 group :development, :test do
@@ -34,4 +32,3 @@ group :development do
   gem 'erb2haml'
   gem 'spring'
 end
-
