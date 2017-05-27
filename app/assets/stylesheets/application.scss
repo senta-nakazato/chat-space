@@ -4,8 +4,7 @@
 
 @import "./config/reset";
 @import "./config/variable";
-@import "./main-page/main_top";
-@import "./main-page/main_body";
-@import "./main-page/main_bottom";
-@import "./side-page/side";
-
+@import "./base/_main_top";
+@import "./base/main_body";
+@import "./base/main_bottom";
+@import "./base/side";
