@@ -13,14 +13,8 @@
 /tmp
 
 helpers/
-mailers/
-models/
-bin/
-db/
-lib/
-log/
-public/
 test/
-tmp/
 vender/
+images/
+messages.coffee
 

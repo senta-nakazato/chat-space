@@ -23,12 +23,20 @@ gem 'font-awesome-rails'
 gem 'haml-rails'
 
 group :development, :test do
+
   gem 'byebug'
+
   gem 'listen'
+
 end
 
 group :development do
+
   gem 'web-console', '~> 2.0'
+
   gem 'erb2haml'
+
   gem 'spring'
+
 end
+
