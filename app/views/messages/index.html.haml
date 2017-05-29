@@ -1,12 +1,29 @@
-#main_page
-  .user_side
-    .user_side_top user_name
-    .user_side_bottom group_of_user
-  .group_side
-    .group_side_top present_group
-    .group_side_bottom
-    remarks_of_user
-     = render :partial => "remark"
-    .form
-      .remark_input
-      .button
+#chat-space
+  .chat-side
+    .chat-side__user
+      .chat-side__user_content
+        .chat-side__user_content__name senta
+        %a.chat-side__user_content__group_edit
+          %i.fa.fa-pencil-square-o
+        %a.chat-side__user_content__user_edit
+          %i.fa.fa-cog
+    .chat-side__group
+      = render partial: "sidebar"
+
+  .chat-mainpage
+    .mainpage__top
+      .mainpage__top__group_content
+        .mainpage__top__group_content__name group
+        %a.mainpage__top__group_content__edit_button edit
+        .mainpage__top__group_content__member MEMBER :
+    .mainpage__body
+      = render partial: "mainpage"
+
+    .mainpage__bottom
+      %form.mainpage__bottom_form
+        .mainpage__bottom_form_content
+          %input.message{placeholder: "type a message", type: "text"}
+          %label.image_file
+            %input.image{type: "file"}
+            %i.fa.fa-image
+        %input.submit{type: "submit", value: "Send"}

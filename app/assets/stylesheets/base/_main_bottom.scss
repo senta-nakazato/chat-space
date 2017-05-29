@@ -1,0 +1,53 @@
+.mainpage__bottom {
+  height: 90px;
+  width: 100%;
+  min-width: 400px;
+  background-color: $side_top_color;
+  form.mainpage__bottom_form {
+    margin: 0 40px;
+    position: relative;
+    .mainpage__bottom_form_content {
+      position: relative;
+      input.message {
+        letter-spacing: 2px;
+        height: 50px;
+        width: calc( 100% - 130px );
+        padding: 15px 10px;
+        margin: 20px 0;
+        border: none;
+      }
+      label.image_file {
+        height: 50px;
+        width: 40px;
+        margin: 37px 130px 20px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        input.image {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          display: none;
+        }
+        i.fa-image {
+          color: $side_bottom_color;
+        }
+      }
+    }
+    input.submit {
+      color:  black;
+      font-weight: 300;
+      font-size: 20px;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      background-color: #ffd700;
+      margin: 20px 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+    }
+  }
+}
+

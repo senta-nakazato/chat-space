@@ -1,0 +1,48 @@
+.chat-mainpage {
+  background-color: $mainpage_color;
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+  .mainpage__top {
+    height: 110px;
+    border-bottom: 1px solid $side_bottom_color;
+    position: relative;
+    min-width: 400px;
+    &__group_content {
+      height: 50px;
+      width: 100%;
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      clear: both;
+      &__name {
+        color: $side_top_color;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0 30px;
+        display: inline-block;
+      }
+      a.mainpage__top__group_content__edit_button {
+        color: $side_top_color;
+        float: right;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border: 1px solid $side_bottom_color;
+        margin: 0 20px;
+        padding: 10px;
+        display: inline-block;
+      }
+      &__member {
+        color:  $side_bottom_color;
+        font-size: 12px;
+        margin: 0 30px;
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+  }
+}
+
