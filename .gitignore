@@ -12,9 +12,8 @@
 !/log/.keep
 /tmp
 
-helpers/
-test/
-vender/
-images/
-messages.coffee
+*.png
+*.gif
+*.jpeg
+*.jpg
 
