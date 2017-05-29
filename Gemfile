@@ -22,6 +22,8 @@ gem 'font-awesome-rails'
 
 gem 'haml-rails'
 
+gem 'font-awesome-rails'
+
 group :development, :test do
 
   gem 'byebug'
