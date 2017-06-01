@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @user = User.new
+    @message = Message.new
   end
 end
 
