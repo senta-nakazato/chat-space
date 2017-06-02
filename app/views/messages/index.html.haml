@@ -1,29 +1,29 @@
-#chat-space
-  .chat-side
-    .chat-side__user
-      .chat-side__user_content
-        .chat-side__user_content__name senta
-        %a.chat-side__user_content__group_edit
-          %i.fa.fa-pencil-square-o
-        %a.chat-side__user_content__user_edit
-          %i.fa.fa-cog
-    .chat-side__group
-      = render partial: "sidebar"
+.chat-side
+  .chat-side__user
+    .chat-side__user_content
+      .chat-side__user_content__name senta
+      = link_to edit_user_path(current_user), class: "chat-side__user_content__group_edit" do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_path(current_user), class: "chat-side__user_content__user_edit" do
+        %i.fa.fa-cog
+  .chat-side__group
+    = render partial: "sidebar"
 
-  .chat-mainpage
-    .mainpage__top
-      .mainpage__top__group_content
-        .mainpage__top__group_content__name group
-        %a.mainpage__top__group_content__edit_button edit
-        .mainpage__top__group_content__member MEMBER :
-    .mainpage__body
-      = render partial: "mainpage"
+.chat-mainpage
+  .mainpage__top
+    .mainpage__top__group_content
+      .mainpage__top__group_content__name group
+      = link_to "edit", root_path, class: "mainpage__top__group_content__edit_button"
+      .mainpage__top__group_content__member MEMBER :
+  .mainpage__body
+    = render partial: "mainpage"
 
-    .mainpage__bottom
-      %form.mainpage__bottom_form
-        .mainpage__bottom_form_content
-          %input.message{placeholder: "type a message", type: "text"}
-          %label.image_file
-            %input.image{type: "file"}
-            %i.fa.fa-image
-        %input.submit{type: "submit", value: "Send"}
+  .mainpage__bottom
+    = form_for (current_user), html: {class: 'mainpage__bottom_form'} do |f|
+      .mainpage__bottom_form_content
+        = f.text_field :name, :placeholder => "type a message", class: "message"
+        %label.image_file
+          = f.file_field :image, class: "image"
+          %i.fa.fa-image
+        = f.submit "SEND", class: "submit"
+

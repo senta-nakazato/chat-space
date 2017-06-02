@@ -24,6 +24,9 @@ gem 'haml-rails'
 
 gem 'font-awesome-rails'
 
+gem 'devise'
+
+
 group :development, :test do
 
   gem 'byebug'
@@ -33,6 +36,8 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'pry-rails'
 
   gem 'web-console', '~> 2.0'
 
