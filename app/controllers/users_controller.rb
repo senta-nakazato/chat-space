@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def update
     User.update(user_params)
-    redirect_to :root
+    redirect_to action: :edit
   end
 
   def user_params

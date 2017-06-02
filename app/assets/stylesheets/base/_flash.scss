@@ -1,0 +1,21 @@
+.flash {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-weight: 100;
+  &__alert {
+    background-color: red;
+
+  }
+  &__notice {
+    background-color: $side_bottom_color;
+  }
+  &__error {
+    background-color: red;
+  }
+  &__success {
+    background-color: $side_bottom_color;
+  }
+}
