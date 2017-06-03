@@ -13,7 +13,7 @@
   .mainpage__top
     .mainpage__top__group_content
       .mainpage__top__group_content__name group
-      = link_to "edit", root_path, class: "mainpage__top__group_content__edit_button"
+      = link_to "edit", edit_group_path(@group), class: "mainpage__top__group_content__edit_button"
       .mainpage__top__group_content__member MEMBER :
   .mainpage__body
     = render partial: "mainpage"
