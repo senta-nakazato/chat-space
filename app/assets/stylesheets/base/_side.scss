@@ -1,3 +1,9 @@
+a {
+  color: #d36216;
+  text-decoration: none;
+}
+
+
 .chat-side {
   height: 100vh;
   width: 300px;
@@ -55,6 +61,8 @@
       }
       &__new-message {
         color: $mainpage_color;
+        font-weight: 400;
+        font-size: 15px;
       }
     }
   }

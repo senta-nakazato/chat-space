@@ -1,18 +1,21 @@
 .chat-side
   .chat-side__user
     .chat-side__user_content
-      .chat-side__user_content__name senta
-      = link_to edit_user_path(current_user), class: "chat-side__user_content__group_edit" do
+      .chat-side__user_content__name
+        = current_user.name
+      = link_to new_group_path, class: "chat-side__user_content__group_edit" do
         %i.fa.fa-pencil-square-o
       = link_to edit_user_path(current_user), class: "chat-side__user_content__user_edit" do
         %i.fa.fa-cog
   .chat-side__group
-    = render partial: "sidebar"
+    - @groups.each do |group|
+      = render partial: "groups/sidebar", locals: {group: group}
 
 .chat-mainpage
   .mainpage__top
     .mainpage__top__group_content
-      .mainpage__top__group_content__name group
+      .mainpage__top__group_content__name
+        = @group.name
       = link_to "edit", edit_group_path(@group), class: "mainpage__top__group_content__edit_button"
       .mainpage__top__group_content__member MEMBER :
   .mainpage__body
