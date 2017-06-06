@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = "編集できません"
-      render 'edit'
+      render :edit
     end
   end
 

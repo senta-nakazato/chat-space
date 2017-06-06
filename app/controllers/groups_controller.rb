@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit,:update]
+
   def index
     @groups = current_user.groups
   end
@@ -15,7 +16,7 @@ class GroupsController < ApplicationController
       redirect_to group_messages_path(@group)
     else
       flash.now[:alert] = "このグループはすでに存在します"
-      render 'new'
+      render :new
     end
   end
 
@@ -28,8 +29,7 @@ class GroupsController < ApplicationController
       redirect_to group_messages_path(@group)
     else
       flash.now[:alert] = "すでに存在するグループです"
-      render 'edit'
-      # redirect_to  edit_group_path(@group)
+      render :edit
     end
   end
 
