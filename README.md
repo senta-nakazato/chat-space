@@ -3,8 +3,8 @@
 
 ## usersテーブル
 **association**
--has_many :users_groups
--has_mamy :groups, through: :groups_users
+-has_many :group_users
+-has_mamy :groups, through: :group_users
 -has_many :messages
 
 |colum|type|option|
@@ -16,8 +16,8 @@
 
 ## groupsテーブル
 **association**
--has_many :users_groups
--has many :users, through: :groups_users
+-has_many :group_users
+-has_many :users, through: :group_users
 -has_many :messages
 
 
@@ -40,10 +40,10 @@
 
 
 
-## users_groups中間テーブル
+## group_users中間テーブル
 **association**
 -belongs_to :group
--belobgs_to :user
+-belongs_to :user
 
 
 |column|type|option|

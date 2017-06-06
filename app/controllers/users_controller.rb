@@ -3,10 +3,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    User.update(user_params)
-    redirect_to action: :edit
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      flash[:notice] = "ユーザー内容を編集しました！"
+      redirect_to root_path
+    else
+      flash.now[:alert] = "編集できません"
+      render :edit
+    end
   end
 
+  private
   def user_params
     params.require(:user).permit(:name, :email)
   end
