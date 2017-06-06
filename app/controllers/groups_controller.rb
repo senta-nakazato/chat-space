@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit,:update]
   def index
     @groups = current_user.groups
   end
@@ -13,29 +14,32 @@ class GroupsController < ApplicationController
       flash[:notice] = "グループを作成しました！"
       redirect_to group_messages_path(@group)
     else
-      flash[:alert] = "このグループはすでに存在します"
-      redirect_to new_group_path
+      flash.now[:alert] = "このグループはすでに存在します"
+      render 'new'
     end
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       flash[:notice] = "グループを編集しました！"
       redirect_to group_messages_path(@group)
     else
-      flash[:alert] = "すでに存在するグループです"
-      redirect_to  edit_group_path(@group)
+      flash.now[:alert] = "すでに存在するグループです"
+      render 'edit'
+      # redirect_to  edit_group_path(@group)
     end
   end
 
   private
   def group_params
-    params.require(:group).permit(:name, {user_ids: []})
+    params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
 

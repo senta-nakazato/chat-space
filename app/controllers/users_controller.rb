@@ -8,11 +8,12 @@ class UsersController < ApplicationController
       flash[:notice] = "ユーザー内容を編集しました！"
       redirect_to root_path
     else
-      flash[:alert] = "編集できません"
-      redirect_to  edit_user_path
+      flash.now[:alert] = "編集できません"
+      render 'edit'
     end
   end
 
+  private
   def user_params
     params.require(:user).permit(:name, :email)
   end
