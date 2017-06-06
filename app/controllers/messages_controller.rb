@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @groups = current_user.groups
+    @messages = Message.where(group_id: @group.id)
   end
 
   private
