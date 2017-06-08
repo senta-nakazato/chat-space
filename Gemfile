@@ -26,6 +26,7 @@ gem 'font-awesome-rails'
 
 gem 'devise'
 
+gem 'carrierwave'
 
 group :development, :test do
 
