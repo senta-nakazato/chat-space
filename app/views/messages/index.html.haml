@@ -16,7 +16,10 @@
       .mainpage__top__group_content__name
         = @group.name
       = link_to "edit", edit_group_path(@group), class: "mainpage__top__group_content__edit_button"
-      .mainpage__top__group_content__member MEMBER :
+      .mainpage__top__group_content__member
+        MEMBER :
+        - @users.each do |user|
+          = user.name
   .mainpage__body
     = render @messages
 
