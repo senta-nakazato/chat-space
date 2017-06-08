@@ -26,7 +26,7 @@
   .mainpage__bottom
     = form_for [@group, @message], html: {class: 'mainpage__bottom_form'} do |f|
       .mainpage__bottom_form_content
-        = f.text_field :text, :placeholder => "type a message", class: "message"
+        = f.text_field :text, placeholder: "type a message", class: "message"
         = f.label :image, class: "image_file" do
           = f.file_field :image, class: "image"
           %i.fa.fa-image
