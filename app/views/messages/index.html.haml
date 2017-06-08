@@ -9,7 +9,6 @@
         %i.fa.fa-cog
   .chat-side__group
     = render partial: "groups/group", collection: @groups
-
 .chat-mainpage
   .mainpage__top
     .mainpage__top__group_content
@@ -22,8 +21,6 @@
           = user.name
   .mainpage__body
     = render @messages
-
-
   .mainpage__bottom
     = form_for [@group, @message], html: {class: 'mainpage__bottom_form'} do |f|
       .mainpage__bottom_form_content
