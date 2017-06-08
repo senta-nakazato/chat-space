@@ -3,10 +3,11 @@ class Message < ApplicationRecord
   belongs_to :user
 
   validates :text_or_image, presence: true
+  mount_uploader :image, ImageUploader
 
   private
     def text_or_image
-      text || image
+      text.presence || image.presence
     end
 end
 
