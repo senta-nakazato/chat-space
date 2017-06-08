@@ -2,5 +2,9 @@
   .chat-side__group_content
     .chat-side__group_content__name
       = group.name
-    .chat-side__group_content__new-message メッセージはまだありません
+    .chat-side__group_content__new-message
+      - if group.messages.present?
+        = group.messages.last.text
+      - else
+        No message yet
 
