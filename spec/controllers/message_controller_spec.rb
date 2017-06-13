@@ -1,19 +1,19 @@
 require 'rails_helper'
 
 describe MessagesController, type: :controller do
-  let(:user) { create(:user) }
-  let(:group) { create(:group) }
-  let(:message) { create(:message) }
-  let(:users) { create(:group.users) }
-  let(:groups) { create(:user.groups) }
+  let(:user)     { create(:user) }
+  let(:group)    { create(:group) }
+  let(:message)  { create(:message) }
+  let(:users)    { create(:group.users) }
+  let(:groups)   { create(:user.groups) }
   let(:messages) { create(:group.messages) }
-  # userをcreateし、let内に格納
+  let(:group_page){ get :index, params: {group_id: group} }
 
   describe 'GET #index' do
     context 'if the user log in' do
       before do
         login_user user
-        get :index, params: {group_id: group.id}
+        group_page
       end
 
       it "assigns the requested message to @message" do
@@ -35,7 +35,7 @@ describe MessagesController, type: :controller do
 
     context 'if user does not log in' do
       it "renders the new_user_session_path template" do
-        get :index, params: {group_id: group.id}
+        group_page
         expect(response).to redirect_to new_user_session_path
       end
     end

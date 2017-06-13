@@ -10,11 +10,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.raise_errors_for_deprecations!
   config.include FactoryGirl::Syntax::Methods
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.filter_rails_from_backtrace!
-  # config.include Devise::TestHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, :type => :controller
   config.include ControllerMacros, type: :controller
    config.use_transactional_fixtures = true
