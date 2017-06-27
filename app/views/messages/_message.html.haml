@@ -3,7 +3,7 @@
     = message.user.name
   .mainpage__body_content__date
     = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
-  .mainpage__body_contetn__message
+  .mainpage__body_content__message
     = message.text
-    = image_tag message.image
+    = image_tag message.image.thumb if message.image
 

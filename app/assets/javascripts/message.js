@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function() {
-  var path = location.pathname;
-
   function buildHTML(message){
-    var html = $('<div class="mainpage__body_content">').append(
-           `<div class="mainpage__body_content__user_name">
+    var messageImage = message.image ? `<img src="${message.image}" alt="${message.image}">` : ``;
+    var html = `
+          <div class="mainpage__body_content">
+            <div class="mainpage__body_content__user_name">
               ${message.name}
             </div>
             <div class="mainpage__body_content__date">
@@ -12,8 +12,9 @@ $(document).on('turbolinks:load', function() {
             <div class="mainpage__body_contetn__message">
               ${message.text}
               ${messageImage}
-            </div>`
-          );
+            </div>
+          </div>
+          `;
     return html;
   };
 
@@ -31,7 +32,7 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data){
       $('.mainpage__body').append(buildHTML(data));
-      })
+    })
     .fail (function(data){
       alert('メッセージを入力してください。');
     });

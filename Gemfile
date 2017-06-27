@@ -42,6 +42,8 @@ group :development, :test do
 
   gem 'rails-controller-testing'
 
+  gem 'faker'
+
 end
 
 group :development do
@@ -60,7 +62,7 @@ end
 
 group :test do
 
-  gem 'faker'
+  
 
 end
 

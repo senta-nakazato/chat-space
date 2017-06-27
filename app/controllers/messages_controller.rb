@@ -12,11 +12,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to group_messages_path(@group) }
+        format.html { redirect_to group_messages_path(@group), notice: "投稿しました" }
         format.json
       end
-      flash[:notice] = "投稿しました"
-      redirect_to  group_messages_path(@group)
     else
       flash.now[:alert] = "メッセーシを入力してください"
       get_users
