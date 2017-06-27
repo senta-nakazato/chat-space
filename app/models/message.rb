@@ -4,7 +4,6 @@ class Message < ApplicationRecord
 
   validates :text_or_image, presence: true
   mount_uploader :image, ImageUploader
-  # attr_accessaor :image
 
   private
     def text_or_image
