@@ -6,5 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  scope :search_users, ->(keyword, user) {where('name LIKE(?)', "%#{keyword}%").where.not(id: user.id)}
 end
 
