@@ -34,11 +34,11 @@ class MessagesController < ApplicationController
   end
 
   def get_users
-     @users = @group.users
+    @users = @group.users
   end
 
   def get_messages
-     @messages = @group.messages
+    @messages = @group.messages.includes(:user)
   end
 
   def message_params

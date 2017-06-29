@@ -39,5 +39,28 @@ $(document).on('turbolinks:load', function() {
     this.reset();
     return false;
   });
+
+ setInterval(function(){
+    var input = $(".message").length;
+    var href = window.location.href;
+    if (input !== 0){
+      $.ajax({
+        type: 'GET',
+        url: href,
+        dataType: 'json',
+      })
+      .done(function(data){
+        var html = "";
+        $('.mainpage__body').empty();
+        $.each(data, function(i, message) {
+          html += buildHTML(message);
+        });
+        $(".mainpage__body").html(html);
+      })
+      .fail(function(){
+        alert("自動更新失敗");
+      });
+    }
+  }, 5000);
 });
 
