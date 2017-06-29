@@ -46,6 +46,12 @@ group :development, :test do
 
 end
 
+group :production do
+
+  gem 'unicorn'
+
+end
+
 group :development do
 
   gem 'pry-rails'
