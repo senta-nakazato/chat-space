@@ -12,8 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      flash[:notice] = "グループを作成しました！"
-      redirect_to group_messages_path(@group)
+      redirect_to group_messages_path(@group), notice: "グループを作成しました"
     else
       flash.now[:alert] = "このグループはすでに存在します"
       render :new
@@ -24,9 +23,9 @@ class GroupsController < ApplicationController
   end
 
   def update
+    binding.pry
     if @group.update(group_params)
-      flash[:notice] = "グループを編集しました！"
-      redirect_to group_messages_path(@group)
+      redirect_to group_messages_path(@group), notice: "グループを編集しました"
     else
       flash.now[:alert] = "すでに存在するグループです"
       render :edit
