@@ -41,9 +41,9 @@ $(document).on('turbolinks:load', function() {
   });
 
  setInterval(function(){
-    var input = $(".message").length
+    var input = $(".message").length;
     var href = window.location.href;
-    if (input != 0){
+    if (input !== 0){
       $.ajax({
         type: 'GET',
         url: href,
@@ -51,14 +51,14 @@ $(document).on('turbolinks:load', function() {
       })
       .done(function(data){
         var html = "";
+        $('.mainpage__body').empty();
         $.each(data, function(i, message) {
           html += buildHTML(message);
-          $('.mainpage__body').empty();
         });
         $(".mainpage__body").html(html);
       })
-      .fail(function(data){
-        alert("うまく作動しません")
+      .fail(function(){
+        alert("自動更新失敗");
       });
     }
   }, 5000);
