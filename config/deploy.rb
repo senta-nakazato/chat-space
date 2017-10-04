@@ -1,8 +1,9 @@
 # config valid only for current version of Capistrano
 lock "3.8.2"
 
+set :linked_files, %w{ config/secrets.yml }
 set :application, "chat-space"
-set :repo_url, "git@example.com:senta-nakazato/chat-space.git"
+set :repo_url, "https://github.com/senta-nakazato/chat-space.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
